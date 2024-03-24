@@ -213,6 +213,15 @@ header {
   }
 }
 
+#burger {
+  display: none;
+}
+@media (max-width: 768px) {
+  #burger {
+    display: block;
+  }
+}
+
 aside {
   padding: 56px 0 24px;
   width: 25%;

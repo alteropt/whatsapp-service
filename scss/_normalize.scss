@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: Lato;
+  background-color: $cWhite;
+  color: $cText;
+}
+
+a {
+  text-decoration: none;
+  color: $cText;
+}
+
+button,
+input,
+textarea {
+  background: transparent;
+  outline: none;
+  border: 0;
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1740px;
+  padding: 0 40px;
+
+  @media(max-width: 1440px) {
+     max-width: 1280px;
+  }
+
+  @media(max-width: 1200px) {
+    max-width: auto;
+  }
+
+  @media(max-width: 1024px) {
+    padding: 0 30px;
+  }
+
+  @media(max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+.page-container {
+  padding-top: 102px;
+  position: relative;
+
+  @media(max-width: 768px) {
+    padding-top: 88px;
+  }
+}
+
+.opacity {
+  opacity: 0.75;
+}
+
+.input, .textarea {
+  border: 2px solid $cLightGray;
+  padding: 16px 20px;
+  color: $cText;
+  font-weight: 500;
+  border-radius: 7px;
+
+  &:focus {
+    border-color: $cPrimary;
+  }
+}
+
+.button {
+  border-radius: 7px;
+  font-weight: 500;
+  border: 2px solid $cLightGray;
+  cursor: pointer;
+  background-color: $cLightGray;
+  transition: border-color linear .3s;
+
+  &:hover, &:focus {
+    border-color: $cPrimary;
+  }
+}
+
+.button-primary {
+  border-radius: 7px;
+  border: 2px solid $cPrimary;
+  font-weight: 500;
+  color: $cWhite;
+  cursor: pointer;
+  background-color: $cPrimary;
+  transition: background-color .3s linear, color .3s linear;
+
+  &:hover, &:focus {
+    background-color: transparent;
+    color: $cPrimary;
+  }
+}

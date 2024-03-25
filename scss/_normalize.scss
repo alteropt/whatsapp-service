@@ -30,6 +30,10 @@ textarea {
   line-height: 1.2;
 }
 
+button {
+  cursor: pointer;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -75,42 +79,4 @@ ul {
   opacity: 0.75;
 }
 
-.input, .textarea {
-  border: 2px solid $cLightGray;
-  padding: 16px 20px;
-  color: $cText;
-  font-weight: 500;
-  border-radius: 7px;
 
-  &:focus {
-    border-color: $cPrimary;
-  }
-}
-
-.button {
-  border-radius: 7px;
-  font-weight: 500;
-  border: 2px solid $cLightGray;
-  cursor: pointer;
-  background-color: $cLightGray;
-  transition: border-color linear .3s;
-
-  &:hover, &:focus {
-    border-color: $cPrimary;
-  }
-}
-
-.button-primary {
-  border-radius: 7px;
-  border: 2px solid $cPrimary;
-  font-weight: 500;
-  color: $cWhite;
-  cursor: pointer;
-  background-color: $cPrimary;
-  transition: background-color .3s linear, color .3s linear;
-
-  &:hover, &:focus {
-    background-color: transparent;
-    color: $cPrimary;
-  }
-}

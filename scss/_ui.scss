@@ -1,0 +1,93 @@
+.input, .textarea {
+  border: 2px solid $cLightGray;
+  padding: 16px 20px;
+  color: $cText;
+  font-weight: 500;
+  border-radius: 7px;
+
+  &:focus {
+    border-color: $cPrimary;
+  }
+}
+
+.button {
+  border-radius: 7px;
+  font-weight: 500;
+  border: 2px solid $cLightGray;
+  cursor: pointer;
+  background-color: $cLightGray;
+  transition: border-color linear .3s;
+
+  &:hover, &:focus {
+    border-color: $cPrimary;
+  }
+}
+
+.button-primary {
+  border-radius: 7px;
+  border: 2px solid $cPrimary;
+  font-weight: 500;
+  color: $cWhite;
+  background-color: $cPrimary;
+  transition: background-color .3s linear, color .3s linear;
+
+  &:hover, &:focus {
+    background-color: transparent;
+    color: $cPrimary;
+  }
+}
+
+.subscription-warning {
+  width: 100%;
+  border-radius: 7px;
+  background-color: $cLightGray;
+  padding: 16px 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &__info {
+    max-width: 350px;
+  }
+
+  &__title {
+    font-weight: 900;
+  }
+
+  @media(max-width: 768px) {
+      padding: 12px 24px;
+  }
+}
+
+/* Accordeon */
+.accordeon {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    
+    font-weight: 900;
+    cursor: pointer;
+
+    margin-bottom: 28px;
+
+    button {
+      transform: rotate(180deg)
+    }
+  }
+
+  &.active .accordeon__title button {
+    transform: rotate(0);
+  }
+
+  .accordeon__content {
+    display: none;
+  }
+
+  &.active {
+    .accordeon__content {
+      display: block;
+    }
+  }
+}

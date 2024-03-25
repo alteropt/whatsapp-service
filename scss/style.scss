@@ -2,6 +2,7 @@
 @import './variables';
 @import './normalize';
 @import './text-styles';
+@import './ui';
 
 header {
   position: fixed;
@@ -48,11 +49,11 @@ header {
 }
 
 aside {
-  padding: 56px 0 24px;
+  padding: 40px 0 24px;
   width: 25%;
   position: sticky;
   left: 0;
-  top: 56px;
+  top: 40px;
   z-index: 100;
   float: left;
 
@@ -90,7 +91,7 @@ aside {
 .aside__title {
   margin-bottom: 60px;
 
-  @media(max-width: 768px) {
+  @media(max-height: 400px) {
     margin-bottom: 20px;
   }
 }
@@ -128,6 +129,27 @@ aside {
       transition: width .1s linear;
     }
 
+    &.load span {
+      display: block;
+      position: relative;
+    }
+
+    &.load span::after {
+      content: '';
+
+      display: block;
+      background: $cPrimary;
+
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 10px;
+      height: 10px;
+      border-radius: 100px;
+    }
+
     &.active::before, &:hover::before {
       width: 2px;
     }
@@ -145,9 +167,11 @@ aside {
 }
 
 main {
-  padding-top: 68px;
+  padding-top: 40px;
   padding-bottom: 24px;
-  width: 70%;
+
+  min-height: calc(100vh - 104px);
+  width: 75%;
   margin-left: auto;
 
   @media(max-width: 768px) {
@@ -280,6 +304,136 @@ main {
 .start__submit {
   padding: 12px 80px;
   font-weight: 800;
+}
+
+/* Campaigns */
+.campaigns__warning {
+  margin-bottom: 32px;
+}
+
+.campaigns__headline {
+  margin-bottom: 48px;
+}
+
+.campaigns__title {
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.campaigns__accordeon {
+  margin-bottom: 68px;
+}
+
+.campaigns__cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @media(max-width: 1440px) {
+    gap: 12px;   
+  }
+
+  @media(max-width: 992px) {
+    gap: 30px;
+  }
+}
+
+.campaigns__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  background-color: $cLightGray;
+  border-radius: 7px;
+  
+  flex-basis: 30%;
+  padding: 20px 36px;
+
+  @media(max-width: 1440px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+
+    flex-basis: 48%;
+  }
+
+  @media(max-width: 992px) {
+    flex-basis: 100%;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &-title {
+    font-weight: 800;
+  }
+
+  &-data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-basis: 15%;
+
+    button {
+      margin: 0 auto;
+    }
+
+    @media(max-width: 1440px) {
+      flex-basis: 100%;
+      gap: 12px;
+      align-self: flex-end;
+      
+      button {
+        margin: 0;
+      }
+    }
+
+  }
+
+  &.active {
+    max-width: none;
+    flex-basis: 48%;
+    
+    border-left: 10px solid $cLightGray;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+    background-color: $cWhite;
+
+    padding-left: 25px;
+
+    @media(max-width: 992px) {
+      flex-basis: 100%;
+    }
+
+    .campaigns__card-actions {
+      flex-basis: 40%;
+
+      @media(max-width: 1440px) {
+        flex-basis: 100%;
+      }
+    }
+
+    &.loading {
+      border-left-color: $cPrimary;
+    }
+  }
 }
 
 /* Footer */

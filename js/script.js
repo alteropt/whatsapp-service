@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Aside Menu
   const aside = document.getElementById('aside')
   const burger = document.getElementById('burger')
 
@@ -13,5 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
       aside.classList.remove('active') 
     }
   })
+
+  // Accordeon
+  const accordeons = document.querySelectorAll('.accordeon')
+  accordeons.forEach(accordeon => {
+    const accordeonToggle = accordeon.querySelector('.accordeon__title')
+    
+    accordeonToggle.addEventListener('click', () => {
+      accordeon.classList.toggle('active')
+    })
+  })
+ 
 })
 

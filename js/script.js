@@ -24,6 +24,21 @@ document.addEventListener('DOMContentLoaded', function() {
       accordeon.classList.toggle('active')
     })
   })
+
+  // Add template
+  const addTemplate = document.getElementById('add-template')
+  addTemplate.addEventListener('click', (event) => {
+    event.preventDefault()
+    const templates = document.getElementById('templates')
+    const template = document.getElementById('template').cloneNode()
+    template.tabIndex = templates.childElementCount + 2
+    if(templates.childElementCount < 10) {
+      templates.appendChild(template)
+    }
+    if(templates.childElementCount === 10) {
+      addTemplate.remove()
+    }
+  })
  
 })
 

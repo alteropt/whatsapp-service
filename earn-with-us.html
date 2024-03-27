@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WhatsApp Service</title>
+  <title>Earn with us</title>
+
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
           </a>
           <button id="burger">
             <img src="./img/icons/header/menu.svg" alt="menu">
-          </bu>
+          </button>
         </div>
       </div>
     </div>
@@ -32,12 +33,12 @@
       <h5 class="h5 aside__title">Dashboard</h5>
       <nav class="aside__menu">
         <ul>
-          <li class="aside__menu-item active">
+          <li class="aside__menu-item">
             <a href="/dashboard.html" aria-label="Home">
               <img src="./img/icons/menu/home.svg" alt="home"><span>Home</span>
             </a>
           </li>
-          <li class="aside__menu-item load">
+          <li class="aside__menu-item load not-load">
             <a href="/campaigns.html" aria-label="Campaigns">
               <img src="./img/icons/menu/campaigns.svg" alt="campaigns"><span>Campaigns</span>
             </a>
@@ -52,7 +53,7 @@
               <img src="./img/icons/menu/subscription.svg" alt="subscription"><span>Subscription</span>
             </a>
           </li>
-          <li class="aside__menu-item">
+          <li class="aside__menu-item active">
             <a href="/earn-with-us.html" aria-label="Earn with us">
               <img src="./img/icons/menu/earn-with-us.svg" alt="earn-with-us"><span>Earn with us</span>
             </a>
@@ -62,59 +63,42 @@
     </aside>
 
     <main>
-      <section class="start">
-        <form action="post">
-          <div class="headline">
-            <h3 class="h3" class="title">Hi, SMMA Agency</h3>
-            <p class="opacity small">Create a Sending Campaign From Here</p>
-          </div>
-          <div class="start__info info">
-            <div>
-              <img src="./img/icons/info/email.svg" alt="email">
-              <p class="opacity">Available Messages: 3 381</p>
-            </div>
-            <div>
-              <img src="./img/icons/info/future.svg" alt="future">
-              <p class="opacity">Expires In: 18 days</p>
-            </div>
-          </div>
+      <section>
+        <div class="earn__inner">
           <div>
-            <h4 class="h4 start__heading">Upload a list of numbers</h4>
-            <div class="start__upload">
-              <input type="file" id="file-upload" style="display: none;" name="file-upload" class="input">
-              <label for="file-upload" tabindex="1">
+            <div class="headline earn__headline">
+              <h3 class="h3 title">Earn with Us</h3>
+              <p class="opacity small">Resell our product & receive a percentage every month for each client you brought</p>
+            </div>
+            <div class="earn__referal">
+              <h4 class="h4 earn__referal-title">Your refferal link:</h4>
+              <div class="earn__referal-input">
                 <div>
-                  <img src="./img/icons/file-upload.svg" alt="upload file">
+                  <input type="text" class="input" readonly value="whatsbulking.co/?r=smmaagency">
+                  <button>
+                    <img src="./img/icons/copy.svg" alt="copy">
+                  </button>  
                 </div>
-                <p class="small opacity">Accepted Formats: XLSX, CSV, TXT</p>
-              </label>
+                <span class="opacity">You will receive 10% commission for each client brought</span>
+              </div>
+            </div>
+            <form class="earn__form">
+              <input type="text" class="input" tabindex="1" placeholder="USDT Receiving Address">
+              <button type="submit" class="button-primary button-text" tabindex="2">Save</button>
+            </form>
+            <div class="earn__clients">
+              <h4 class="h4" class="earn__clients-title">Active clients</h4>
             </div>
           </div>
-          <h4 class="h4 start__heading">Message templates</h4>
-          <div class="start__messages">
-            <div id="templates">
-              <textarea id="template" name="template" class="textarea">Hello, %username%, we have a unique offer for you!</textarea>
-              <textarea name="template" class="textarea">Hello, %username%, we have a unique offer for you!</textarea>
-            </div>
-            <button type="button" id="add-template" class="button-text button">+</button>
+          <div class="income">
+            <h2 class="h2 income__amount">$5,430.00</h2>
+            <p class="income__desc opacity">Will be transferred to your USDT address <br> At the end of this month</p>
           </div>
-          <div class="start__dynamic">
-            <span class="opacity">Use Dynamic Data:</span>
-            <div class="start__dynamic-btns">
-              <button tabindex="2" type="button" class="active button">User’s Name</button>
-              <button tabindex="3" type="button" class="button">Phone Number</button>
-              <button tabindex="4" type="button" class="button">Today’s Date</button>
-            </div>
-            <div class="start__dynamic-checkbox">
-              <input tabindex="5" type="checkbox" id="use-ai" name="use-ai" class="input"> 
-              <label for="use-ai" class="small">ChatGPT Rewriting</label>
-            </div>
-          </div>
-          <button type="submit" tabindex="6" class="button-primary start__submit button-text">Start</button>
-        </form>
+        </div>
       </section>
     </main>
   </div>
+
 
   <footer>
     <div class="container">
@@ -132,7 +116,6 @@
       </div>
     </div>
   </footer>
-
   <script src="./js/script.js"></script>
 </body>
 </html>

@@ -66,8 +66,16 @@
     font-weight: 900;
   }
 
-  @media(max-width: 768px) {
-      padding: 12px 24px;
+  @media(max-width: 1024px) {
+      padding: 16px 24px 28px;
+  }
+
+  @media(max-width: 425px) {
+    flex-direction: column;
+
+    >img {
+      align-self: flex-start;
+    }
   }
 }
 
@@ -103,8 +111,10 @@
   }
 }
 
+/* Headline */
 .headline {
   margin-bottom: 40px;
+  max-width: 300px;
 
   .title {
     font-weight: 800;
@@ -124,6 +134,7 @@
   }
 }
 
+/* Plan */
 .plan {
   padding: 32px 48px;
   border-radius: 15px;
@@ -133,7 +144,7 @@
   display: flex;
   flex-direction: column;
 
-  @media(max-width: 768px) {
+  @media(max-width: 1024px) {
     padding: 24px;
   }
 
@@ -188,6 +199,42 @@
     padding: 20px 0;
     width: 100%;
     align-self: flex-start;
+    font-weight: 800; 
+  }
+}
+
+/* Income Card */
+.income {
+  padding: 40px;
+  background-color: $cLightGray;
+  border-radius: 7px;
+
+  max-width: 500px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media(max-width: 768px) {
+    padding: 24px;      
+  }
+
+  &__amount {
     font-weight: 800;
+
+    &.h2 { 
+      @media(max-width: 768px) {
+        font-size: 48px;    
+      }
+
+      @media(max-width: 425px) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__desc {
+    max-width: 400px;
   }
 }

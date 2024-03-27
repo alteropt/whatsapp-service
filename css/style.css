@@ -869,6 +869,10 @@ main {
 .earn__referal-input > div button {
   cursor: pointer;
 }
+.earn__referal-input > div button.copied {
+  border: 2px solid #2853EA;
+  border-radius: 7px;
+}
 
 .earn__form {
   display: flex;

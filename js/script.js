@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Accordeon
   const accordeons = document.querySelectorAll('.accordeon')
-  accordeons.forEach(accordeon => {
+  accordeons?.forEach(accordeon => {
     const accordeonToggle = accordeon.querySelector('.accordeon__title')
     
     accordeonToggle.addEventListener('click', () => {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add template
   const addTemplate = document.getElementById('add-template')
-  addTemplate.addEventListener('click', (event) => {
+  addTemplate?.addEventListener('click', (event) => {
     event.preventDefault()
     const templates = document.getElementById('templates')
     const template = document.getElementById('template').cloneNode()
@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
       addTemplate.remove()
     }
   })
- 
+
+  // Copy referal link
+  const copyBtn = document.getElementById('copy-btn')
+  copyBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    const referalLink = document.getElementById('referal-link')
+    referalLink.select()
+    document.execCommand('copy')
+    copyBtn.classList.add('copied')
+    setTimeout(() => {
+      copyBtn.classList.remove('copied')
+    }, 1000)
+  })
 })
 

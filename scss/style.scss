@@ -569,6 +569,11 @@ main {
 
     button {
       cursor: pointer;
+
+      &.copied {
+        border: 2px solid $cPrimary;
+        border-radius: 7px;
+      }
     }
   }
 }

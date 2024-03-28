@@ -17,7 +17,15 @@
 }
 
 @font-face {
+  font-weight: 8;
+  font-family: Lato;
+  font-style: italic;
+  src: url('../fonts/Lato-HeavyItalic.ttf');
+}
+
+@font-face {
   font-weight: 900;
   font-family: Lato;
   src: url('../fonts/Lato-Black.ttf');
 }
+

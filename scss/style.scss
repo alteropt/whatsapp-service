@@ -4,6 +4,34 @@
 @import './text-styles';
 @import './ui';
 
+.container {
+  margin: 0 auto;
+  max-width: 1740px;
+  padding: 0 40px;
+
+  @media(max-width: 1440px) {
+     max-width: 1280px;
+  }
+
+  @media(max-width: 1200px) {
+    max-width: auto;
+  }
+
+  @media(max-width: 1024px) {
+    padding: 0 20px;
+  }
+}
+
+.page-container {
+  padding-top: 102px;
+  position: relative;
+
+  @media(max-width: 1024px) {
+    padding-top: 88px;
+  }
+}
+  
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -52,6 +80,7 @@ header {
   font-weight: 800;
 }
 
+/* Aside */
 aside {
   padding: 40px 0 24px;
   width: 25%;
@@ -175,6 +204,7 @@ aside {
   }
 }
 
+/* Main */
 main {
   padding-top: 40px;
   padding-bottom: 24px;
@@ -558,10 +588,6 @@ main {
       max-width: 400px;
       width: 100%;
 
-      @media(max-width: 768px) {
-        width: auto;
-      }
-
       &:focus {
         border: none;
       }
@@ -593,10 +619,6 @@ main {
   input {
     max-width: 400px;
     width: 100%;
-
-    @media(max-width: 768px) {
-      width: auto;   
-    }
   }
 
   button {

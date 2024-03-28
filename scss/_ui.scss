@@ -11,7 +11,7 @@
 }
 
 .button {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 
@@ -27,26 +27,25 @@
   &:hover, &:focus {
     background-color: darken($cLightGray, 5%);
   }
-}
+  
+  &.button-primary {
+    border-color: $cPrimary;
+    color: $cWhite;
+    background-color: $cPrimary;
+  
+    &:hover, &:focus {
+      background-color: darken($cPrimary, 10%);
+    }
+  }
 
-.button-primary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  border-radius: 7px;
-  border: 2px solid $cPrimary;
-  font-weight: 500;
-  color: $cWhite;
-  background-color: $cPrimary;
-  transition: background-color .2s linear;
-
-  &:hover, &:focus {
-    background-color: darken($cPrimary, 10%);
+  &.button-outline {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;  
+    border-image-source: linear-gradient(90deg, #2853EA 0%, #245BC5 100%);
   }
 }
+
 
 .subscription-warning {
   width: 100%;
@@ -144,8 +143,38 @@
   display: flex;
   flex-direction: column;
 
+  
   @media(max-width: 1024px) {
     padding: 24px;
+  }
+
+  &.free {
+    background: linear-gradient(90deg, #2853EA 0%, #245BC5 100%), url(../img/pricing/bg.png);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+
+    color: $cWhite;
+
+    .plan__btn {
+      border: 2px solid $cWhite;
+      background: transparent;
+    }
+
+    ul li {
+      &::before {
+        background-image: url(../img/icons/plan/yes-white.svg);
+      }
+
+      &.no::before {
+        background-image: url(../img/icons/plan/no-white.svg);
+      }
+    }
+  }
+
+  &__chrs {
+    margin-bottom: 12px;  
   }
 
   &__type {
@@ -236,5 +265,23 @@
 
   &__desc {
     max-width: 400px;
+  }
+}
+
+// People block
+.people-block {
+  display: flex;
+  margin-right: -32px;
+
+  img {
+    position: relative;
+  
+    &:nth-child(2) {
+      left: -16px;
+    }
+
+    &:nth-child(3) {
+      left: -32px;
+    }
   }
 }

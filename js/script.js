@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Copy referal link
   const copyBtn = document.getElementById('copy-btn')
-  copyBtn.addEventListener('click', (event) => {
+  copyBtn?.addEventListener('click', (event) => {
     event.preventDefault()
     const referalLink = document.getElementById('referal-link')
     referalLink.select()

@@ -9,20 +9,25 @@
 </head>
 <body>
   <header>
-    <div class="header__inner">
-      <div class="logo">
-        <a href="#">
-          <span class="subheading logo">WhatsBulking</span>
-        </a>
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="#">
+            <span class="subheading logo">WhatsBulking</span>
+          </a>
+        </div>
+        <nav id="navigation">
+          <ul class="header__navigation">
+            <li class="subheading"><a href="#">Pricing</a></li>
+            <li class="subheading"><a href="#">Features</a></li>
+            <li class="subheading"><a href="#">Review</a></li>
+          </ul>
+          <a href="#" class="button-primary button button-text header__btn">Start now</a>
+        </nav>
+        <div class="burger" id="burger">
+          <span></span>
+        </div>
       </div>
-      <nav>
-        <ul class="header__navigation">
-          <li class="subheading"><a href="#">Pricing</a></li>
-          <li class="subheading"><a href="#">Features</a></li>
-          <li class="subheading"><a href="#">Review</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="button-primary button button-text header__btn">Start now</a>
     </div>
   </header>
 
@@ -299,5 +304,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="./js/index.js"></script>
 </body>
 </html>

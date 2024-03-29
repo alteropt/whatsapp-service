@@ -280,6 +280,11 @@ ul {
 .plan.has-chrs {
   padding: 39px 48px 72px;
 }
+@media (max-width: 1024px) {
+  .plan.has-chrs {
+    padding: 39px 24px 24px;
+  }
+}
 .plan__chrs {
   margin-bottom: 12px;
 }
@@ -370,6 +375,57 @@ ul {
 }
 .people-block img:nth-child(3) {
   left: -32px;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  width: 32px;
+  height: 24px;
+  position: relative;
+}
+.burger span {
+  width: 32px;
+  height: 4px;
+  background-color: #1E1E1E;
+  border-radius: 7px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: width 0.2s linear;
+}
+.burger span::before, .burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 32px;
+  height: 4px;
+  background-color: #1E1E1E;
+  border-radius: 7px;
+  transition: transform 0.2s linear;
+}
+.burger span::before {
+  bottom: calc(100% + 6px);
+}
+.burger span::after {
+  top: calc(100% + 6px);
+}
+.burger.active span {
+  width: 0;
+}
+.burger.active span::before {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+.burger.active span::after {
+  top: 0;
+  transform: rotate(45deg);
+}
+@media (max-width: 1024px) {
+  .burger {
+    display: block;
+  }
 }
 
 .container {

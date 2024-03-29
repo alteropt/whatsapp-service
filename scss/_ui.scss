@@ -188,10 +188,15 @@
         background-image: url(../img/icons/plan/no-white.svg);
       }
     }
-  }
 
+  }
+  
   &.has-chrs {
     padding: 39px 48px 72px;
+
+    @media(max-width: 1024px) {
+      padding: 39px 24px 24px;
+    }
   }
 
   &__chrs {
@@ -304,5 +309,72 @@
     &:nth-child(3) {
       left: -32px;
     }
+  }
+}
+
+/* Burger */
+.burger {
+  display: none;
+  width: 32px;
+  height: 24px;
+  position: relative;
+
+  span {
+    width: 32px;
+    height: 4px;
+    background-color: $cText;
+    border-radius: 7px;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: width .2s linear;
+
+    &::before, &::after {
+      content: '';
+
+      position: absolute;
+      left: 0;
+
+      width: 32px;
+      height: 4px;
+      background-color: $cText;
+
+      border-radius: 7px;
+
+      transition: transform .2s linear;
+    }
+
+    &::before {
+      bottom: calc(100% + 6px);
+    }
+
+    &::after {
+      top: calc(100% + 6px);
+    }
+  }
+
+  &.active {
+    span {
+      width: 0;
+
+      &::before {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+      
+      &::after {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+    }
+  }
+
+
+  @media(max-width: 1024px) {
+    display: block;
   }
 }

@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
   @media(max-width: 1024px) {
     padding: 0 24px;
-    max-width: auto;
+    max-width: none;
   }
 }
 
@@ -44,9 +44,15 @@ header {
   top: 92px;
   width: 100%;
   z-index: 100;
+
+  @media(max-width: 1024px) {
+    top: 64px;
+  }
 }
 
 .header__inner {
+  position: relative;
+
   margin: 0 auto;
   width: fit-content;
   padding: 20px 110px;
@@ -59,6 +65,48 @@ header {
   align-items: center;
   justify-content: center;
   gap: 60px;
+
+  @media(max-width: 1280px) {
+    padding: 20px 60px;
+  }
+
+  @media(max-width: 1024px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  @media(max-width: 768px) {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    @media(max-width: 1024px) {
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      top: calc(100% + 12px);
+      left: 0;
+      gap: 24px;
+      border-radius: 15px;
+      padding: 24px;
+
+      background-color: rgba(255, 255, 255, .7);
+
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: transform .2s linear, opacity .2s linear;
+
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 } 
 
 .header__navigation {
@@ -73,12 +121,25 @@ header {
       color: $cPrimary;
     }
   }
+
+  @media(max-width: 1024px) {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 .header__btn {
   padding: 20px 70px;
   border-radius: 15px;
   border-width: 3px;
+
+  @media(max-width: 1440px) {
+    padding: 20px 60px;
+  }
+
+  @media(max-width: 1024px) {
+    padding: 12px 48px;
+  }
 }
 
 /* Intro */
@@ -90,12 +151,20 @@ header {
   background: url(../img/intro-background.jpg);
   background-color: $cLightGray;
   background-size: cover;
+
+  @media(max-width: 1024px) {
+    padding-top: 68px;
+  }
 }
 
 .intro__pattern {
   position: absolute;
   top: 0;
   right: 0;
+
+  @media(max-width: 1024px) {
+    width: 50%;
+  }
 }
 
 .intro__inner {
@@ -106,6 +175,7 @@ header {
 
 .intro__text {
   margin-bottom: 92px;
+
 }
 
 .intro__title {
@@ -117,6 +187,16 @@ header {
 
   span {
     color: $cPrimary;
+  }
+
+  @media(max-width: 1440px) {
+    font-size: 64px;
+    max-width: 600px;
+  }
+
+  @media(max-width: 768px) {
+    font-size: 52px;
+    max-width: none;  
   }
 }
 
@@ -132,6 +212,8 @@ header {
   gap: 72px;
 
   opacity: 0.3;
+
+  overflow: hidden;
 }
 
 /* Video */
@@ -147,12 +229,27 @@ header {
   gap: 48px;
 
   color: $cWhite;
+
+  @media(max-width: 1440px) {
+    padding: 64px 48px;
+  }
+
+  @media(max-width: 768px) {
+    padding: 32px;
+    border-radius: 32px;
+  }
 }
 
 .video__text {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
+
+  @media(max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .video__title {
@@ -162,16 +259,40 @@ header {
     font-size: 36px;
   }
 
+
+  @media(max-width: 1024px) {
+    max-width: none;
+  }
+
+  @media(max-width: 768px) {
+    font-size: 24px;
+
+    i {
+      font-size: 24px;
+    }
+  }
 }
 
 .video__desc {
   max-width: 330px;
+
+  @media(max-width: 1024px) {
+    max-width: none; 
+  }
 }
 
 .video__video {
   height: 650px;
   border-radius: 15px;
   background-color: $cText;
+
+  @media(max-width: 1024px) {
+    height: 400px;
+  }
+
+  @media(max-width: 768px) {
+    height: 250px;
+  }
 }
 
 /* Why WhatsApp */
@@ -193,6 +314,11 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 24px;
+
+  @media(max-width: 1024px) {
+    flex-wrap: wrap;
+    gap: 48px;
+  }
 }
 
 .why__reason {
@@ -211,6 +337,19 @@ header {
   >p {
     text-transform: capitalize;
   }
+
+  @media(max-width: 1440px) {
+    flex-basis: 32%;
+  }
+
+  @media(max-width: 1024px) {
+    flex-basis: 40%;
+    margin: 0 auto; 
+  }
+
+  @media(max-width: 768px) {
+    flex-basis: 100%;  
+  }
 }
 
 /* Features */
@@ -224,10 +363,21 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media(max-width: 1024px) {
+    padding: 0 24px 90px;
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
 }
 
 .features__title {
   margin-bottom: 76px;
+
+  @media(max-width: 1024px) {
+    margin-bottom: 32px;
+  }
 }
 
 .features__features {
@@ -251,6 +401,16 @@ header {
   align-items: flex-start;
   flex-basis: 48%;
   gap: 24px;
+
+  @media(max-width: 1024px) {
+    flex-basis: 100%;  
+  }
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 24px;
+  }
 
   h3 {
     margin-bottom: 12px;
@@ -285,6 +445,10 @@ header {
 
 .features__demo-title {
   margin-bottom: 30px;
+
+  @media(max-width: 768px) {
+    font-size: 32px;  
+  }
 }
 
 .features__demo-btn {
@@ -293,6 +457,10 @@ header {
   box-shadow: 0px 0px 30px 0px rgba(17, 73, 188, 1);
   border: 0;
   margin-bottom: 24px;
+
+  @media(max-width: 768px) {
+    padding: 30px;
+  }
 }
 
 .features__people {
@@ -319,6 +487,10 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 24px;
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .reviews__review {
@@ -332,6 +504,25 @@ header {
   box-shadow: 0px 4px 32px 0px #0000000D;
   background-color: $cWhite;
   border: 1px solid $cLightGray;
+
+  @media(max-width: 1440px) {  
+    display: block;
+
+    >img {
+      float: left;
+      margin-right: 12px;
+    }
+  }
+
+  @media(max-width: 1024px) {
+    flex-direction: column;
+    display: flex;
+    gap: 24px;
+  }
+
+  @media(max-width: 768px) {
+    flex-basis: 100%;
+  }  
 }
 
 .reviews__author {
@@ -359,13 +550,34 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  flex-wrap: wrap;
   gap: 24px;
 
   .plan {
     flex-basis: 24%;
     background-color: $cWhite;
     box-shadow: 0px 0px 29px 0px #2D313E26;
+    margin: 0 auto;
+
+    @media(max-width: 1920px) {
+      padding-left: 32px;
+      padding-right: 32px;
+
+      &.free {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+    }
+
+    @media(max-width: 1280px) {
+      flex-basis: 48%;
+    }
+
+    @media(max-width: 768px) {
+      flex-basis: 100%;
+    }
   }
+
 }
 
 /* Footer */
@@ -392,10 +604,28 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 60px;
+
+  @media(max-width: 1024px) {
+    padding: 30px 64px;
+    gap: 30px;
+  }
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .footer__nav {
   display: flex;
   gap: 60px;
+
+  @media(max-width: 1024px) {
+    gap: 30px;  
+  }
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 

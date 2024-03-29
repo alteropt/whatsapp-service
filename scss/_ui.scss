@@ -135,13 +135,14 @@
 
 /* Plan */
 .plan {
-  padding: 32px 48px;
+  padding: 72px 48px;
   border-radius: 15px;
   border: 1px solid $cLightGray;
   box-shadow: 0px 4px 30px 0px #0000001A;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   
   @media(max-width: 1024px) {
@@ -149,13 +150,29 @@
   }
 
   &.free {
-    background: linear-gradient(90deg, #2853EA 0%, #245BC5 100%), url(../img/pricing/bg.png);
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center center;
+    background: linear-gradient(91.36deg, #2853EA 0%, #245BC5 100%);
 
     color: $cWhite;
+    position: relative;
+
+    .plan__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .plan__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      z-index: 1;
+      opacity: 0.4;
+    }
+
 
     .plan__btn {
       border: 2px solid $cWhite;
@@ -171,6 +188,10 @@
         background-image: url(../img/icons/plan/no-white.svg);
       }
     }
+  }
+
+  &.has-chrs {
+    padding: 39px 48px 72px;
   }
 
   &__chrs {

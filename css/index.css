@@ -78,6 +78,10 @@ ul {
   font-size: 24px;
 }
 
+.subheading-20 {
+  font-size: 20px;
+}
+
 .button-text {
   font-size: 20px;
 }
@@ -103,7 +107,7 @@ ul {
 }
 
 .h3 {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .h4 {
@@ -229,12 +233,13 @@ ul {
 
 /* Plan */
 .plan {
-  padding: 32px 48px;
+  padding: 72px 48px;
   border-radius: 15px;
   border: 1px solid #F8F9FE;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1019607843);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 @media (max-width: 1024px) {
   .plan {
@@ -242,12 +247,25 @@ ul {
   }
 }
 .plan.free {
-  background: linear-gradient(90deg, #2853EA 0%, #245BC5 100%), url(../img/pricing/bg.png);
-  background-blend-mode: multiply;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center center;
+  background: linear-gradient(91.36deg, #2853EA 0%, #245BC5 100%);
   color: #FFFFFF;
+  position: relative;
+}
+.plan.free .plan__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+.plan.free .plan__background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+  opacity: 0.4;
 }
 .plan.free .plan__btn {
   border: 2px solid #FFFFFF;
@@ -258,6 +276,9 @@ ul {
 }
 .plan.free ul li.no::before {
   background-image: url(../img/icons/plan/no-white.svg);
+}
+.plan.has-chrs {
+  padding: 39px 48px 72px;
 }
 .plan__chrs {
   margin-bottom: 12px;
@@ -422,7 +443,9 @@ header {
 }
 
 .header__btn {
-  padding: 20px 40px;
+  padding: 20px 70px;
+  border-radius: 15px;
+  border-width: 3px;
 }
 
 /* Intro */
@@ -452,10 +475,10 @@ header {
 
 .intro__title {
   font-weight: 800;
-  font-size: 128px;
+  font-size: 96px;
   margin: 0 auto;
   margin-bottom: 32px;
-  max-width: 80%;
+  max-width: 1050px;
 }
 .intro__title span {
   color: #2853EA;
@@ -493,7 +516,10 @@ header {
 }
 
 .video__title {
-  max-width: 50%;
+  max-width: 670px;
+}
+.video__title i {
+  font-size: 36px;
 }
 
 .video__desc {
@@ -508,8 +534,7 @@ header {
 
 /* Why WhatsApp */
 .why {
-  background: linear-gradient(92.97deg, rgba(40, 83, 234, 0.8) 0%, rgba(23, 47, 132, 0.8) 100%), url(../img/img-gradient.png);
-  background-size: cover;
+  background: linear-gradient(90deg, rgb(63, 80, 139) 0%, rgb(87, 96, 128) 70%, rgb(79, 86, 120) 100%);
   color: #FFFFFF;
   padding: 60px 0 80px;
   margin-bottom: 150px;
@@ -543,7 +568,7 @@ header {
 
 /* Features */
 .features__inner {
-  background: linear-gradient(175deg, rgba(255, 255, 255, 0) 11.06%, #0860E4 100%), url(../img/img-gradient.png);
+  background: linear-gradient(175deg, rgba(255, 255, 255, 0) 11.06%, #0860E4 100%);
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
   padding: 0 70px 90px;
@@ -579,7 +604,10 @@ header {
   margin-bottom: 12px;
 }
 .features__feature > div {
-  max-width: 450px;
+  max-width: 530px;
+}
+.features__feature > div p {
+  text-transform: capitalize;
 }
 .features__feature.key {
   flex-basis: 100%;
@@ -598,14 +626,13 @@ header {
 }
 
 .features__demo-title {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .features__demo-btn {
-  padding: 20px 80px;
+  padding: 30px 113px;
   background: linear-gradient(91.36deg, #2853EA 0%, #245BC5 100%);
   box-shadow: 0px 0px 30px 0px rgb(17, 73, 188);
-  font-weight: 800;
   border: 0;
   margin-bottom: 24px;
 }

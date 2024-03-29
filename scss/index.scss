@@ -76,7 +76,9 @@ header {
 }
 
 .header__btn {
-  padding: 20px 40px;
+  padding: 20px 70px;
+  border-radius: 15px;
+  border-width: 3px;
 }
 
 /* Intro */
@@ -108,10 +110,10 @@ header {
 
 .intro__title {
   font-weight: 800;
-  font-size: 128px;
+  font-size: 96px;
   margin: 0 auto;
   margin-bottom: 32px;
-  max-width: 80%;
+  max-width: 1050px;
 
   span {
     color: $cPrimary;
@@ -154,7 +156,12 @@ header {
 }
 
 .video__title {
-  max-width: 50%;
+  max-width: 670px;
+
+  i {
+    font-size: 36px;
+  }
+
 }
 
 .video__desc {
@@ -169,9 +176,8 @@ header {
 
 /* Why WhatsApp */
 .why {
-  background: linear-gradient(92.97deg, rgba(40, 83, 234, .8) 0%, rgba(23, 47, 132, .8) 100%), url(../img/img-gradient.png);
-  background-size: cover;
-
+  background: linear-gradient(90deg, rgba(63,80,139,1) 0%, rgba(87,96,128,1) 70%, rgba(79,86,120,1) 100%);
+  
   color: $cWhite;
 
   padding: 60px 0 80px;
@@ -209,7 +215,7 @@ header {
 
 /* Features */
 .features__inner {
-  background: linear-gradient(175deg, rgba(255, 255, 255, 0) 11.06%, #0860E4 100%), url(../img/img-gradient.png);
+  background: linear-gradient(175deg, rgba(255, 255, 255, 0) 11.06%, #0860E4 100%);
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
 
@@ -251,7 +257,11 @@ header {
   }
 
   >div {
-    max-width: 450px;
+    max-width: 530px;
+
+    p {
+      text-transform: capitalize;
+    }
   }
 
   &.key {
@@ -274,14 +284,13 @@ header {
 }
 
 .features__demo-title {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .features__demo-btn {
-  padding: 20px 80px;
+  padding: 30px 113px;
   background: linear-gradient(91.36deg, #2853EA 0%, #245BC5 100%);
   box-shadow: 0px 0px 30px 0px rgba(17, 73, 188, 1);
-  font-weight: 800;
   border: 0;
   margin-bottom: 24px;
 }

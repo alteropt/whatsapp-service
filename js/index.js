@@ -17,4 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navigation.classList.remove('active')  
     }
   })
+
+  ScrollReveal().reveal('*');
 })

@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1720px;
 
   @media(max-width: 1440px) {
-    max-width: 1300px;
+    max-width: 1376px;
   }
 
   @media(max-width: 1024px) {
@@ -161,6 +161,7 @@ header {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
 
   @media(max-width: 1024px) {
     width: 50%;
@@ -168,31 +169,53 @@ header {
 }
 
 .intro__inner {
-  text-align: center;
   overflow: hidden;
 
   padding-top: 128px;
 }
 
-.intro__text {
+.intro__intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
   margin-bottom: 92px;
+  z-index: 2;
 
+  @media(max-width: 1280px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.intro__text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-basis: 50%;
+  
+  @media(max-width: 1280px) {
+    margin: 0 auto;
+    max-width: 70%;
+    align-items: center;
+  }
+
+  @media(max-width: 1024px) {
+    max-width: none;
+  }
 }
 
 .intro__title {
   font-weight: 800;
-  font-size: 96px;
-  margin: 0 auto;
-  margin-bottom: 32px;
-  max-width: 1050px;
+ // max-width: 1050px;
 
   span {
     color: $cPrimary;
   }
 
   @media(max-width: 1440px) {
-    font-size: 64px;
-    max-width: 600px;
+   // max-width: 600px;
   }
 
   @media(max-width: 768px) {
@@ -201,17 +224,23 @@ header {
   }
 }
 
-.intro__subtitle {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
 .intro__partners {
   opacity: 0.3;
 
   display: flex;
   width: max-content;
   gap: 72px;
+}
+
+.intro__btn {
+  padding: 20px 80px;
+  border-radius: 0;
+  background: transparent;
+  width: fit-content;
+
+  @media(max-width: 768px) {
+    padding: 20px 40px;
+  }
 }
 
 .intro__content {
@@ -313,6 +342,95 @@ header {
   }
 }
 
+/* Engage */
+.engage__headline {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 940px;
+  text-align: center;
+  margin: 0 auto 48px;
+
+  @media(max-width: 768px) {
+    .h2 {
+      font-size: 32px;
+    }
+    
+  }
+}
+
+.engage__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  @media(max-width: 1024px) {
+    flex-direction: column-reverse;
+  }
+
+  >figure {
+    flex-basis: 48%
+  }
+}
+
+.engage__content {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  flex-basis: 40%;
+
+  @media(max-width: 1280px) {
+    flex-basis: 48%;
+  }
+
+  @media(max-width: 768px) {
+    gap: 24px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @media(max-width: 768px) {
+      gap: 24px;
+    }
+
+    li {
+      color: $cText;
+      padding-left: 50px;
+      position: relative;
+
+      &::before {
+        content: '';
+      
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        left: 0;
+
+        width: 24px;
+        height: 24px;
+
+        background-image: url(../img/engage/tick.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  a {
+    padding: 20px;
+
+    @media(max-width: 1024px) {
+      width: fit-content;
+      padding: 20px 60px;
+    }
+  }
+}
+
 /* Why WhatsApp */
 .why {
   background: linear-gradient(90deg, rgba(63,80,139,1) 0%, rgba(87,96,128,1) 70%, rgba(79,86,120,1) 100%);
@@ -396,9 +514,11 @@ header {
   flex-direction: column;
   align-items: center;
 
-  @media(max-width: 1024px) {
-    padding: 0 24px 90px;
+  @media(max-width: 1280px) {
+    padding: 0 24px 90px; 
+  }
 
+  @media(max-width: 1024px) {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
   }
@@ -433,6 +553,10 @@ header {
   align-items: flex-start;
   flex-basis: 48%;
   gap: 24px;
+
+  @media(max-width: 1440px) {
+    align-items: center
+  }
 
   @media(max-width: 1024px) {
     flex-basis: 100%;  
@@ -611,6 +735,22 @@ header {
       }
     }
 
+    @media(max-width: 1280px) {
+      padding: 24px;
+
+      .plan__price {
+        font-size: 52px;
+      }
+
+      &.free {
+        padding: 24px;
+      
+        .plan__price {
+          font-size: 52px;
+        }
+      }
+    }
+
     @media(max-width: 1024px) {
       flex-basis: 48%;
 
@@ -622,7 +762,7 @@ header {
     @media(max-width: 768px) {
       flex-basis: 100%;
 
-      &.free {
+      &.free >img {
         width: 80%;
       }
     }

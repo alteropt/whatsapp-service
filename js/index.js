@@ -19,4 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   ScrollReveal().reveal('*');
+
+ // $('.intro__partners').marquee({duration: 1000, duplicated: true})
 })

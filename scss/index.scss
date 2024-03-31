@@ -169,6 +169,7 @@ header {
 
 .intro__inner {
   text-align: center;
+  overflow: hidden;
 
   padding-top: 128px;
 }
@@ -207,15 +208,9 @@ header {
 
 .intro__partners {
   opacity: 0.3;
-  overflow: hidden;
-}
-
-
-.intro__track {
-  min-width: 200%;
-  width: fit-content;
 
   display: flex;
+  width: max-content;
   gap: 72px;
 }
 
@@ -223,20 +218,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  animation: 10s marquee infinite linear;
   gap: 72px;
 
   width: max-content;
-}
 
+  animation: marquee 10s linear infinite;
+}
 @keyframes marquee {
   from {
     transform: translateX(0)
   }
 
   to {
-    transform: translateX(calc(-100% - 72px))
+    transform: translateX(calc(-100% - 72px));
   }
 }
 
@@ -360,6 +354,20 @@ header {
 
   >p {
     text-transform: capitalize;
+  }
+
+  @media(max-width: 1920px) {
+    .h2 {
+      font-size: 48px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+
+    >p {
+      font-size: 18px;
+    }
   }
 
   @media(max-width: 1440px) {

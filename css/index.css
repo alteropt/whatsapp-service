@@ -596,6 +596,7 @@ header {
 
 .intro__inner {
   text-align: center;
+  overflow: hidden;
   padding-top: 128px;
 }
 
@@ -633,14 +634,9 @@ header {
 
 .intro__partners {
   opacity: 0.3;
-  overflow: hidden;
-}
-
-.intro__track {
-  min-width: 200%;
-  width: -moz-fit-content;
-  width: fit-content;
   display: flex;
+  width: -moz-max-content;
+  width: max-content;
   gap: 72px;
 }
 
@@ -648,10 +644,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: 10s marquee infinite linear;
   gap: 72px;
   width: -moz-max-content;
   width: max-content;
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
@@ -781,6 +777,17 @@ header {
 }
 .why__reason > p {
   text-transform: capitalize;
+}
+@media (max-width: 1920px) {
+  .why__reason .h2 {
+    font-size: 48px;
+  }
+  .why__reason span {
+    font-size: 20px;
+  }
+  .why__reason > p {
+    font-size: 18px;
+  }
 }
 @media (max-width: 1440px) {
   .why__reason {

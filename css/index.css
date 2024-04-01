@@ -280,16 +280,19 @@ ul {
 .plan.has-chrs {
   padding: 39px 48px 72px;
 }
+.plan.has-chrs .plan__chrs {
+  margin-bottom: 0;
+}
+.plan.has-chrs .plan__type {
+  margin-bottom: 0;
+}
 @media (max-width: 1024px) {
   .plan.has-chrs {
     padding: 39px 24px 24px;
   }
 }
-.plan__chrs {
-  margin-bottom: 12px;
-}
 .plan__type {
-  margin-bottom: 16px;
+  margin-bottom: 19px;
 }
 .plan__price {
   margin-bottom: 20px;
@@ -491,6 +494,11 @@ header {
   justify-content: center;
   gap: 60px;
 }
+@media (max-width: 1440px) {
+  .header__inner {
+    padding: 20px 80px;
+  }
+}
 @media (max-width: 1280px) {
   .header__inner {
     padding: 20px 60px;
@@ -523,7 +531,7 @@ header {
     gap: 24px;
     border-radius: 15px;
     padding: 24px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255);
     transform: translateY(-50%);
     opacity: 0;
     transition: transform 0.2s linear, opacity 0.2s linear;
@@ -1005,6 +1013,7 @@ header {
   flex-basis: 100%;
   flex-direction: column;
   align-items: center;
+  position: relative;
   text-align: center;
 }
 
@@ -1205,6 +1214,11 @@ footer a {
   justify-content: center;
   align-items: center;
   gap: 60px;
+}
+@media (max-width: 1440px) {
+  .footer__inner {
+    padding: 20px 80px;
+  }
 }
 @media (max-width: 1024px) {
   .footer__inner {

@@ -194,17 +194,21 @@
   &.has-chrs {
     padding: 39px 48px 72px;
 
+    .plan__chrs {
+      margin-bottom: 0;
+    }
+
+    .plan__type {
+      margin-bottom: 0;
+    }
+
     @media(max-width: 1024px) {
       padding: 39px 24px 24px;
     }
   }
 
-  &__chrs {
-    margin-bottom: 12px;  
-  }
-
   &__type {
-    margin-bottom: 16px;
+    margin-bottom: 19px;
   }
 
   &__price {

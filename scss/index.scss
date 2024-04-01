@@ -95,7 +95,7 @@ header {
       border-radius: 15px;
       padding: 24px;
 
-      background-color: rgba(255, 255, 255, .7);
+      background-color: rgba(255, 255, 255, .8);
 
       transform: translateY(-50%);
       opacity: 0;
@@ -193,7 +193,11 @@ header {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  flex-basis: 50%;
+  flex-basis: 52%;
+
+  @media(max-width: 1440px) {
+    flex-basis: 70%;
+  }
   
   @media(max-width: 1280px) {
     margin: 0 auto;
@@ -719,8 +723,7 @@ header {
     margin: 0 auto;
 
     @media(max-width: 1920px) {
-      padding-left: 32px;
-      padding-right: 32px;
+      padding: 32px;
 
       ul {
         li {
@@ -730,8 +733,7 @@ header {
       }
 
       &.free {
-        padding-left: 32px;
-        padding-right: 32px;
+        padding: 32px 48px;
       }
     }
 
